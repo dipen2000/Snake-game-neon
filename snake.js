@@ -1,5 +1,6 @@
 import { getInputPosition } from "./input.js";
-const snakeBody = [{x:11 , y:11}];
+export let SNAKE_SPEED = 3;
+const snakeBody = [{x:11 , y:11},{x:11 , y:12}];
 export function update(){
     const inputPosition = getInputPosition();
     for(let i=snakeBody.length-2 ; i>=0 ; i--){
