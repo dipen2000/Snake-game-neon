@@ -1,16 +1,15 @@
-import {snakeBody  , onSnake} from "./snake.js"
+import {snakeBody  , onSnake , expandSnake} from "./snake.js"
 import {getRandomPosition} from "./grid.js"
 import {incrementFoodCount} from "./script.js"
 const foodCountElement = document.getElementById("foodCount");
+const EXPANSION_RATE = 1;
 let food = {x:0 , y:0};
 food=getRandomPositionNotOnTheSnake();
 export function updateFood(){
     
     if(onSnake(food)){
-        // expandSnake();
-        
+        expandSnake(EXPANSION_RATE);
         food = getRandomPositionNotOnTheSnake();
-        
         incrementFoodCount();
     }
 }
