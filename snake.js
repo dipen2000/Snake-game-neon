@@ -1,7 +1,7 @@
 import { getInputPosition } from "./input.js";
-import { equalPosition } from "./grid.js";
+import { equalPosition ,getRandomPosition } from "./grid.js";
 export let SNAKE_SPEED = 3;
-export const snakeBody = [{x:11 , y:11},{x:11 , y:12}];
+export const snakeBody = [getRandomPosition()];
 export function update(){
     const inputPosition = getInputPosition();
     for(let i=snakeBody.length-2 ; i>=0 ; i--){
